@@ -9,27 +9,30 @@ from helpers.filters import other_filters2
 async def start(_, message: Message):
     await message.reply_sticker("CAACAgQAAx0CTv65QgABBfJlYF6VCrGMm6OJ23AxHmD6qUSWESsAAhoQAAKm8XEeD5nrjz5IJFYeBA")
     await message.reply_text(
-        f"""**Hey, I'm {bn} 🎵
+        f"""**┗┓| RASCALS BOT MUSIK | ┏┛**
 
-I can play music in your group's voice call. Developed by [Jason](https://t.me/ImJanindu).
+**Hallo kamu** 🙋‍♂
+Nama saya adalah __[Rascals Music Assisten Bot](https://t.me/Rascals_MusicBot)__
+Saya bisa memutar musik di **Voice Call Grup** kamu
+━━━━━━━━━━━━━━━━━━━━
+Dikelola oleh **[Yunus Zend](https://t.me/ZendYNS)**
 
-Add me to your group and play music freely!**
+❖ **Tambahkan __[Rascals Music Assistant](https://t.me/Rascals_MusicAssistant)__ dan [Rascals Music Bot](https://t.me/Rascals_MusicBot)__ ke grup Anda, dan rasakan sensasi mendengar musik di VC Group anda!!**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🛠 Source Code 🛠", url="https://github.com/ImJanindu/GroupMusicBot")
+                        "🎧 More Info 🎧", url="https://github.com/ImJanindu/GroupMusicBot")
                   ],[
                     InlineKeyboardButton(
-                        "💬 Group", url="https://t.me/InfinityBOTs_Support"
+                        "💭 Group Support", url="https://t.me/KingUserbotSupport"
                     ),
                     InlineKeyboardButton(
-                        "🔊 Channel", url="https://t.me/Infinity_BOTs"
-                    )
-                ],[ 
+                        "👨‍💻 Creator 👨‍💻", url="https://t.me/ZendYNS"
+                    ),
                     InlineKeyboardButton(
-                        "➕ Add To Your Group ➕", url="https://t.me/JEGroupMusicPlayerBot?startgroup=true"
+                        "Channel Support 🔉", url="https://t.me/UpdateInfoBOT"
                     )]
             ]
         ),
