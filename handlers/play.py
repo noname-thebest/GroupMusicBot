@@ -19,7 +19,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 @errors
 async def play(_, message: Message):
 
-    lel = await message.reply("🔄 **Processing** sounds...")
+    lel = await message.reply("🔄 **Memproses __lagu tersebut__**...")
     sender_id = message.from_user.id
     sender_name = message.from_user.first_name
 
@@ -27,9 +27,12 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="🔊 Channel",
-                        url="https://t.me/Infinity_BOTs")
-                   
+                        text="🔊 Channel Support",
+                        url="https://t.me/UpdateInfoBOT"
+              ],[
+                    InlineKeyboardButton(
+                        text="👨‍💻 Creator",
+                        url="https://t.me/ZendYNS")
                 ]
             ]
         )
@@ -40,7 +43,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Videos longer than {DURATION_LIMIT} minute(s) aren't allowed to play!"
+                f"❌ Video lebih lama dari {DURATION_LIMIT} menit(s) tidak diizinkan untuk dimainkan!"
             )
 
         file_name = get_file_name(audio)
@@ -51,17 +54,17 @@ async def play(_, message: Message):
     elif url:
         file_path = await converter.convert(youtube.download(url))
     else:
-        return await lel.edit_text("❗ You did not give me anything to play!")
+        return await lel.edit_text("❗ Kamu tidak memberi saya apapun untuk dimainkan!")
 
     if message.chat.id in callsmusic.pytgcalls.active_calls:
         position = await queues.put(message.chat.id, file=file_path)
-        await lel.edit(f"#⃣ **Queued** at position {position}!")
+        await lel.edit(f"#⃣ **Antri** di posisi {position}!")
     else:
         callsmusic.pytgcalls.join_group_call(message.chat.id, file_path)
         await message.reply_photo(
         photo="https://telegra.ph/file/a4fa687ed647cfef52402.jpg",
         reply_markup=keyboard,
-        caption="▶️ **Playing** here the song requested by {}!".format(
+        caption="🎧 __**Sedang Memainkan** lagu tersebut di__ **VCG** __request dari {}!__".format(
         message.from_user.mention()
         ),
     )
