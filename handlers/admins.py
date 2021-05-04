@@ -55,7 +55,7 @@ async def stop(_, message: Message):
         await message.reply_text("❌ Stopped streaming!")
 
 
-@Client.on_message(command("skip") & other_filters)
+@Client.on_message(command("Next") & other_filters)
 @errors
 @authorized_users_only
 async def skip(_, message: Message):
