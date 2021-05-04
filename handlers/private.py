@@ -17,13 +17,13 @@ Saya bisa memutar musik di **Voice Call Grup** kamu
 ━━━━━━━━━━━━━━━━━━━━
 Dikelola oleh **[Yunus Zend](https://t.me/ZendYNS)**
 
-❖ **Tambahkan __[Rascals Music Assistant](https://t.me/Rascals_MusicAssistant)__ dan [Rascals Music Bot](https://t.me/Rascals_MusicBot)__ ke grup Anda, dan rasakan sensasi mendengar musik di VC Group anda!!**
+❖ **Tambahkan __[Rascals Music Assistant](https://t.me/Rascals_MusicAssistant)__ dan __[Rascals Music Bot](https://t.me/Rascals_MusicBot)__ ke grup Anda, dan rasakan sensasi mendengar musik di VC Group anda!!**
         """,
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🎧 More Info 🎧", url="https://github.com/ImJanindu/GroupMusicBot")
+                        "🎧 More Info 🎧", url="https://t.me/UpdateInfoBOT/9")
                   ],[
                     InlineKeyboardButton(
                         "💭 Group Support", url="https://t.me/KingUserbotSupport"
@@ -41,12 +41,12 @@ Dikelola oleh **[Yunus Zend](https://t.me/ZendYNS)**
 
 @Client.on_message(filters.command("start") & ~filters.private & ~filters.channel)
 async def gstart(_, message: Message):
-      await message.reply_text("""**Group Music Player Online ✅**""",
+      await message.reply_text("""**Bot Musik Berhasil Diaktifkan ✅**""",
       reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🔊 Channel", url="https://t.me/Infinity_BOTs")
+                        "🔊 Channel Support", url="https://t.me/UpdateInfoBOT")
                 ]
             ]
         )
