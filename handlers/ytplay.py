@@ -62,9 +62,16 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On YouTube 🎬",
+                        text="🎬 Buka di YouTube 🎬",
                         url=f"{url}")
                    
+                ],[
+                    InlineKeyboardButton(
+                        "💭 Group Support", url="https://t.me/KingUserbotSupport"
+                    ),
+                    InlineKeyboardButton(
+                        "Creator 👨‍💻", url="https://t.me/ZendYNS"
+                    )
                 ]
             ]
         )
@@ -73,9 +80,16 @@ async def play(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        text="Watch On YouTube 🎬",
+                        text="🎬 Buka di YouTube 🎬",
                         url=f"{url}")
                    
+                ],[
+                    InlineKeyboardButton(
+                        "💭 Group Support", url="https://t.me/KingUserbotSupport"
+                    ),
+                    InlineKeyboardButton(
+                        "Creator 👨‍💻", url="https://t.me/ZendYNS"
+                    )
                 ]
             ]
         )
@@ -83,7 +97,7 @@ async def play(_, message: Message):
     audio = (message.reply_to_message.audio or message.reply_to_message.voice) if message.reply_to_message else None
 
     if audio:
-        await lel.edit_text("Lel")
+        await lel.edit_text("Lol")
 
     elif url:
         file_path = await converter.convert(youtube.download(url))
@@ -94,7 +108,7 @@ async def play(_, message: Message):
         position = await queues.put(message.chat.id, file=file_path)
         await message.reply_photo(
         photo=thumb_name, 
-        caption=f"#⃣ Your requested song **queued** at position {position}!",
+        caption=f"#⃣ Lagu yang kamu requrest **antri** di posisi {position}!",
         reply_markup=keyboard2)
         return await lel.delete()
     else:
